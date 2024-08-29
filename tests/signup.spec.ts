@@ -1,8 +1,8 @@
 // @ts-check
 import { test, expect } from '@playwright/test'
 const fs = require('fs');
-function generateRandomText(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+function generateRandomLowercaseText(length) {
+  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < length; i++) {
       result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -15,11 +15,11 @@ function writeEmailToFile(filename, email) {
 }
 
 test('login function', async ({ page }) => {
-  await page.goto('https://customer-dev2.vela.com.vn/account/register');
-  const randomUsername = generateRandomText(10);
+  await page.goto('https://customer-dev3.vela.com.vn/account/register');
+  const randomUsername = generateRandomLowercaseText(12);
   const emailFilename = 'email.txt';
 
-  const randomEmail = `tester${generateRandomText(5)}@yopmail.com`;
+  const randomEmail = `tester${generateRandomLowercaseText(5)}@yopmail.com`;
 
   writeEmailToFile(emailFilename, randomEmail);
   console.log(`Generated email: ${randomEmail}`);

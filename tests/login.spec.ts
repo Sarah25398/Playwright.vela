@@ -6,7 +6,7 @@ function readEmailFromFile(filename) {
 }
 
 test.beforeEach('login function', async ({ page }) => {
-  await page.goto('https://customer-dev2.vela.com.vn/');
+  await page.goto('https://customer-dev3.vela.com.vn/');
 
   const emailFilename = 'email.txt';
 
@@ -54,7 +54,7 @@ test('login test url', async ({ page }) => {
  await page.fill('input[id="companyShortName"]',randomUsername); 
 
  await page.getByRole('searchbox').click();
- await page.getByRole('searchbox').fill('tuy hoa');
+ await page.getByRole('searchbox').fill('tuy hòa');
 
 
  await page.getByText(' Việt Nam / Phú Yên / Tuy Hòa / An Phú ').click();
