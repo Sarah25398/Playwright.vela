@@ -1,12 +1,13 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+
 const fs = require('fs');
 function readEmailFromFile(filename) {
   return fs.readFileSync(filename, 'utf8');
 }
 
 test.beforeEach('login function', async ({ page }) => {
-  await page.goto('https://customer-dev3.vela.com.vn/');
+  await page.goto('https://customer-dev2.vela.com.vn/');
 
   const emailFilename = 'email.txt';
 
@@ -47,7 +48,7 @@ const taxCode = generateRandomTaxCode();
 
 test('login test url', async ({ page }) => {
 
- await page.locator('button[nztype="primary"]').nth(4).click();
+ await page.locator('button[nztype="primary"]').nth(2).click();
 
  await page.fill('input[formcontrolname="taxCode"]', taxCode);
 

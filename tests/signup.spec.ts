@@ -15,7 +15,7 @@ function writeEmailToFile(filename, email) {
 }
 
 test('login function', async ({ page }) => {
-  await page.goto('https://customer-dev3.vela.com.vn/account/register');
+  await page.goto('https://customer-dev2.vela.com.vn/account/register');
   const randomUsername = generateRandomLowercaseText(12);
   const emailFilename = 'email.txt';
 

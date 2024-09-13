@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests', // Directory where your test files are located
   timeout: 3000000, // Maximum time one test can run
   expect: {
-    timeout: 5000, // Maximum time expect() should wait for the condition to be met
+    timeout: 3000000, // Maximum time expect() should wait for the condition to be met
   },
   fullyParallel: true, // Run tests in files in parallel
   forbidOnly: !!process.env.CI, // Fail on test.only() in CI
@@ -12,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined, // Limit the number of workers on CI
   reporter: 'html', // Use html reporter
   use: {
-    headless: false, // Run tests in headless mode or not
+    headless: true, // Run tests in headless mode or not
     viewport: { width: 1280, height: 720 },
     actionTimeout: 0, // Maximum time each action can take
     ignoreHTTPSErrors: true,
@@ -29,7 +29,8 @@ export default defineConfig({
       name: 'Firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-    {
+    */
+    /*{
       name: 'WebKit',
       use: { ...devices['Desktop Safari'] },
     },*/

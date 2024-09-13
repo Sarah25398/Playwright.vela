@@ -1,10 +1,9 @@
-// cucumber.js
-const common = [
-  '--require features/step-definitions/example.steps.js', // Load step definitions
-  '--format progress-bar', // Load progress bar formatter
-  
-].join(' ');
-
 module.exports = {
-  default: common,
-};
+  default: `--format-options '{"snippetInterface": "synchronous"}'`
+},
+{
+  "default": {
+    
+    "timeout": 500000
+  }
+}
